@@ -29,7 +29,7 @@ enum UserKind {
 input CreateUserInp {
   id: String!,
   kind: UserKind!,
-  name: String!,
+  name: String!,  
   email: String!,
   phone: String!,
   PasswordHash: String!,

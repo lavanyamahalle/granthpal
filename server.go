@@ -40,7 +40,7 @@ func main() {
 	router := chi.NewRouter()
 
 	router.Use(cors.Handler(cors.Options{
-		AllowedOrigins:   []string{"https://*", "http://*"},
+		AllowedOrigins:   []string{"https://", "http://"},
 		AllowedMethods:   []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
 		AllowedHeaders:   []string{"Accept", "Authorization", "Content-Type", "X-CSRF-Token"},
 		ExposedHeaders:   []string{"Link"},
@@ -74,5 +74,5 @@ func main() {
 		Str("Address", addr).
 		Msg("Listening...")
 	err = http.ListenAndServe(addr, router)
-	log.Fatal().AnErr("Error", err).Msg("Server terminated")
+	log.Fatal().AnErr("Error", err).Msg("Server terminated")
 }
